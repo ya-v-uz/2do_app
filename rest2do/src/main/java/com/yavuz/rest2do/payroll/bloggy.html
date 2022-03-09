@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app
+    color="pink darken-2">
+        
+            <v-card 
+              color="#8d9eaf"
+              :loading="loading"
+              class="mx-auto my-8"
+              max-width="840"
+              min-width="640"
+              max-height="800"
+             
+            >
+              <template slot="progress">
+                <v-progress-linear
+                  color="red"d
+                  height="10"
+                  indeterminate
+                ></v-progress-linear>
+              </template>
+              
+              <v-img 
+                src="./sv.png"
+                height="300"
+                >
+              </v-img>
+          
+              <v-card-title class="justify-center"> beautiful networking</v-card-title>
+                
+              <v-card-text>
+              
+                
+                <div> 
+                    <p class="text-center">  an open source collective book about everything network related, by yavuz </p>
+                  </div>
+
+                <div  >
+                    <p  class="text-center">
+                        Chapters:
+                    </p>
+                    <p class="text-center">
+                        1. networking layers
+                    </p>
+                    <p class="text-center">
+                        2. layer specific protocols
+                    </p>
+                    <p class="text-center">
+                        3. monitoring and analysis
+                    </p>
+                    <p class="text-center">
+                        4. node algorithms
+                    </p>
+                    <p class="text-center">
+                        5. virtualization
+                    </p>
+                    <p class="text-center">
+                        6. what next?
+                    </p>
+                </div>
+
+              </v-card-text>
+
+              
+          
+              <v-divider class="ma-2"></v-divider>
+
+              <p class="text-center
+              ma-0
+              pa-0">
+                start reading
+            </p>
+          
+              <v-card-text>
+                <v-chip-group
+                 class="justify-center
+                 mn-4
+                 pn-4"
+                  v-model="selection"
+                  active-class="blue darken-3 white--text"
+                  column
+                >
+                  <v-chip> chapter 1</v-chip>
+                  <v-chip>chapter 2</v-chip>
+                  <v-chip>chapter 3</v-chip>
+                  <v-chip>chapter 4</v-chip>
+                  <v-chip>chapter 5</v-chip>
+                  <v-chip>chapter 6</v-chip>
+                </v-chip-group>
+              </v-card-text>
+          
+             
+              </v-card-actions>
+            </v-card>
+
+    </v-app>
+  </div>
+
+  
+
+  <script>
+    export default {
+      data: () => ({
+        loading: false,
+        selection: 1,
+      }),
+  
+      methods: {
+        reserve () {
+          this.loading = true
+  
+          setTimeout(() => (this.loading = false), 2000)
+        },
+      },
+    }
+  </script>
+
+
+<style>
+    #app {
+      
+      background-color: #1b2f42;
+    
+    }
+    </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+    })
+  </script>
+</body>
+</html>
